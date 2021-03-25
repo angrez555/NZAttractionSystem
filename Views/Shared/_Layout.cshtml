@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - NZAttractionSystem</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all"> 
+</head>
+<body style="font-family:'Comic Sans MS';font-size:large; background-color:blanchedalmond">
+    <header>
+        @*<div class="bgded overlay light" style="background-image:url('images/demo/backgrounds/01.png');">*@
+        <div class="wrapper row3">
+            <div id="topbar" class="hoc clear">
+                <div class="fl-right" style="padding-left:750px">
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </div>
+        <!-- ################################################################################################ -->
+        <div class="wrapper row1">
+            <div id="header" class="hoc clear">
+                <!-- ################################################################################################ -->
+                <div id="logo" class="fl_left" style="font-size:xx-large">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Attrative Places In New Zealand</a>
+
+                    @*<h1 style="font-family:'Comic Sans MS'"><a href="index.html">Attrative Places In New Zealand</a></h1>*@
+                </div>
+                <nav id="mainav" class="fl_right">
+                    <ul class="clear">
+                        <li><a href="/Customers">Customer</a></li>
+                        <li><a href="/Attractions">Attractive Places</a></li>
+                        <li><a href="/Bookings">Booking</a></li>
+                    </ul>
+                </nav>
+                <!-- ################################################################################################ -->
+            </div>
+        </div>
+        @*</div>*@
+
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <div class="wrapper row3">
+        <footer class="border-top footer text-muted" style="text-align:center; font-size:x-large">
+            <div style="padding:0px" class="container">
+                &copy; 2021 - NZAttractionSystem - developed by Angrez Wahla
+            </div>
+        </footer>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

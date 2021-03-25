@@ -1,0 +1,54 @@
+﻿@model IEnumerable<NZAttractionSystem.Models.Attraction>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="text-align:center;font-family:'Comic Sans MS';font-size:xx-large">Attractive Places</h1>
+
+<p style="padding-left:60px;">
+    <button type="button" class="btn btn-primary"><a style="background-color:darkgray; color:black;" asp-action="Create">Add New Place</a></button>
+
+</p>
+<table class="table" style="padding-left:30px;">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Place)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th style="width:50%">
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Open_Hours)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Place)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Open_Hours)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
